@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Demo</title>
+  <style>
+body {
+  margin-top: 15px;
+}
+        
+#map-example-container {
+  height: 300px;
+}
+  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geocoder</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/places.js/1/places.min.js"></script>
+
+
+</head>
+<body>
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Geocoder
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                                <input autocomplete="off" type="search" id="input-map" class="form-control" placeholder="Type an address here..." />
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form action="" class="form">
+                                <div class="form-group">
+                                    <label for="form-full-address">Matched address</label>
+                                    <input disabled="disabled" autocomplete="off" type="text" class="form-control" id="form-full-address" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-latitude">Latitude</label>
+                                    <input autocomplete="off" type="text" class="form-control" id="form-latitude">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-longitude">Longitude</label>
+                                    <input autocomplete="off"  type="text" class="form-control" id="form-longitude">
+                                </div>
+                                <div class="form-type">
+                                    <label for="form-type">Type</label>
+                                    <input autocomplete="off"  type="text" class="form-control" id="form-type">
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div id="map-example-container"></div>
+
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <script>
+ (function() {
+        var placesAutocomplete = places({
+            container: document.querySelector('#input-map'),
+            type: 'address'
+        });
+
+        var map = L.map('map-example-container', {
+            scrollWheelZoom: false,
+            zoomControl: true
+        });
+
+        var osmLayer = new L.TileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    minZoom: 1,
+                    maxZoom: 18,
+                    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+                }
+        );
+
+        var markers = [];
+
+        map.setView(new L.LatLng(0, 0), 1);
+        map.addLayer(osmLayer);
+
+        placesAutocomplete.on('suggestions', handleOnSuggestions);
+        placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
+        placesAutocomplete.on('change', handleOnChange);
+        placesAutocomplete.on('clear', handleOnClear);
+
+        function handleOnSuggestions(e) {
+            markers.forEach(removeMarker);
+            markers = [];
+
+            if (e.suggestions.length === 0) {
+                map.setView(new L.LatLng(0, 0), 1);
+                return;
+            }
+
+            e.suggestions.forEach(addMarker);
+            findBestZoom();
+        }
+
+        function handleOnChange(e) {
+            markers
+                    .forEach(function(marker, markerIndex) {
+                        if (markerIndex === e.suggestionIndex) {
+                            markers = [marker];
+                            marker.setOpacity(1);
+                            findBestZoom();
+                        } else {
+                            removeMarker(marker);
+                        }
+                    });
+            console.log('e', e);
+            document.querySelector('#form-full-address').value = e.suggestion.value || '';
+            document.querySelector('#form-latitude').value = e.suggestion.latlng.lat || '';
+            document.querySelector('#form-longitude').value = e.suggestion.latlng.lng || '';
+            document.querySelector('#form-type').value = e.suggestion.type || '';
+        }
+
+        function handleOnClear() {
+            map.setView(new L.LatLng(0, 0), 1);
+            markers.forEach(removeMarker);
+        }
+
+        function handleOnCursorchanged(e) {
+            markers
+                    .forEach(function(marker, markerIndex) {
+                        if (markerIndex === e.suggestionIndex) {
+                            marker.setOpacity(1);
+                            marker.setZIndexOffset(1000);
+                        } else {
+                            marker.setZIndexOffset(0);
+                            marker.setOpacity(0.5);
+                        }
+                    });
+        }
+
+        function addMarker(suggestion) {
+            var marker = L.marker(suggestion.latlng, {opacity: .4});
+            marker.addTo(map);
+            markers.push(marker);
+        }
+
+        function removeMarker(marker) {
+            map.removeLayer(marker);
+        }
+
+        function findBestZoom() {
+            var featureGroup = L.featureGroup(markers);
+            map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
+        }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.controller.GestionPanierCommandeController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-1.0" layoutY="-1.0" prefHeight="690.0" prefWidth="1066.0">
+         <children>
+            <TabPane layoutX="272.0" layoutY="-2.0" prefHeight="684.0" prefWidth="787.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Ajout">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="657.0" prefWidth="787.0">
+                                 <children>
+                                    <Text fx:id="titreAjoutProduit" fill="#689f38" layoutX="84.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="       Ajout des Produits au Panier" wrappingWidth="641.0000106394291">
+                                       <font>
+                                          <Font name="Segoe UI Light" size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Button alignment="CENTER" layoutX="338.0" layoutY="572.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="133.0" stylesheets="@../CSS/BouttonsRes.css" text="Annuler" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="AjouterProduit" alignment="CENTER" layoutX="526.0" layoutY="572.0" mnemonicParsing="false" onAction="#AjouterProduitButton" prefHeight="32.0" prefWidth="133.0" stylesheets="@../CSS/BouttonsRes.css" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <TableView fx:id="tableproduitFront" layoutX="451.0" layoutY="224.0" onMouseClicked="#ShowOnClick" prefHeight="248.0" prefWidth="208.0" style="-fx-background-color: #689f38;">
+                                      <columns>
+                                          <TableColumn fx:id="titre" prefWidth="68.0" text="titre" />
+                                          <TableColumn fx:id="prix" prefWidth="67.0" text="prix" />
+                                          <TableColumn fx:id="quantite" prefWidth="75.0" text="quantite" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="titreAjout" disable="true" layoutX="129.0" layoutY="237.0" style="-fx-border-color: #689f38;" />
+                                    <TextField fx:id="prixAjout" disable="true" layoutX="129.0" layoutY="296.0" style="-fx-border-color: #689f38;" />
+                                    <TextField fx:id="quantiteAjout" layoutX="129.0" layoutY="360.0" style="-fx-border-color: #689f38;" />
+                                    <Label layoutX="16.0" layoutY="242.0" prefHeight="17.0" prefWidth="67.0" text="Titre :" />
+                                    <Label layoutX="14.0" layoutY="301.0" prefHeight="17.0" prefWidth="41.0" text="Prix :" />
+                                    <Label layoutX="16.0" layoutY="365.0" text="Quantite :" />
+                                    <Label layoutX="15.0" layoutY="428.0" prefHeight="17.0" prefWidth="106.0" text="Date de création :" />
+                                    <DatePicker fx:id="dateFront" layoutX="129.0" layoutY="423.0" prefHeight="25.0" prefWidth="152.0" style="-fx-border-color: #689f38;" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Afficher">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane layoutY="-28.0" prefHeight="689.0" prefWidth="787.0">
+                                 <children>
+                                    <Button fx:id="Modifier" alignment="CENTER" layoutX="32.0" layoutY="338.0" mnemonicParsing="false" onAction="#ModifierButton" prefHeight="32.0" prefWidth="133.0" stylesheets="@../CSS/BouttonsRes.css" text="Modifier" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="Supprimer" alignment="CENTER" layoutX="211.0" layoutY="338.0" mnemonicParsing="false" onAction="#SupprimerButton" prefHeight="32.0" prefWidth="133.0" stylesheets="@../CSS/BouttonsRes.css" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <TableView fx:id="tableprod1" layoutX="444.0" layoutY="110.0" onMouseClicked="#showonclickMod" prefHeight="200.0" prefWidth="302.0" style="-fx-background-color: #689f38;">
+                                      <columns>
+                                        <TableColumn fx:id="id1" prefWidth="75.0" text="Reference" />
+                                          <TableColumn fx:id="titre1" prefWidth="75.0" text="titre" />
+                                          <TableColumn fx:id="prix1" prefWidth="75.0" text="prix" />
+                                          <TableColumn fx:id="quantite1" prefWidth="75.0" text="quantite" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="titre_mod" disable="true" layoutX="136.0" layoutY="153.0" style="-fx-border-color: #689f38;" />
+                                    <Label layoutX="33.0" layoutY="158.0" prefHeight="17.0" prefWidth="80.0" text="Titre Produit :" />
+                                    <TextField fx:id="prixprod_mod" disable="true" layoutX="136.0" layoutY="205.0" style="-fx-border-color: #689f38;" />
+                                    <Label layoutX="38.0" layoutY="210.0" prefHeight="17.0" prefWidth="43.0" text="Prix :" />
+                                    <TextField fx:id="quantite_mod" layoutX="136.0" layoutY="255.0" style="-fx-border-color: #689f38;" />
+                                    <Label layoutX="33.0" layoutY="260.0" prefHeight="17.0" prefWidth="52.0" text="Quantite :" />
+                                    <TextField fx:id="id_mod" disable="true" layoutX="137.0" layoutY="111.0" />
+                                    <Label layoutX="32.0" layoutY="115.0" prefHeight="17.0" prefWidth="70.0" text="Reference :" />
+                                    <Button fx:id="calcul" layoutX="59.0" layoutY="564.0" mnemonicParsing="false" onAction="#calcul" prefHeight="33.0" prefWidth="137.0" stylesheets="@../CSS/BouttonsRes.css" text="Calcul" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font></Button>
+                                    <TextField fx:id="prixTotal" disable="true" layoutX="137.0" layoutY="406.0" />
+                                    <Label layoutX="21.0" layoutY="410.0" prefHeight="17.0" prefWidth="65.0" text="Prix Total :" />
+                                    <Button fx:id="pdf" layoutX="509.0" layoutY="565.0" mnemonicParsing="false" onAction="#pdf" prefHeight="32.0" prefWidth="155.0" stylesheets="@../CSS/BouttonsRes.css" text="Generer Facture" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font></Button>
+                                    <Button fx:id="valider" layoutX="384.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnres" prefHeight="33.0" prefWidth="135.0" stylesheets="@../CSS/BouttonsRes.css" text="Valider panier" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font></Button>
+                                    <Text fx:id="titreAjoutProduit1" fill="#689f38" layoutX="211.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   Affichage du Panier" wrappingWidth="346.0000106394291">
+                                       <font>
+                                          <Font name="Segoe UI Light" size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="remise" layoutX="238.0" layoutY="564.0" mnemonicParsing="false" onAction="#remise" prefHeight="34.0" prefWidth="138.0" stylesheets="@../CSS/BouttonsRes.css" text="Remise" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe MDL2 Assets" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="remiseP" disable="true" layoutX="137.0" layoutY="458.0" />
+                                    <Label layoutX="21.0" layoutY="462.0" prefHeight="17.0" prefWidth="52.0" text="Remise :" />
+                                    <TextField fx:id="apresRemise" disable="true" layoutX="139.0" layoutY="511.0" />
+                                    <Label layoutX="20.0" layoutY="515.0" prefHeight="17.0" prefWidth="107.0" text="Prix Apres Remise :" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <AnchorPane opacity="0.77" prefHeight="690.0" prefWidth="272.0" style="-fx-background-color: #8BC34A;">
+               <effect>
+                  <DropShadow color="#13419e" />
+               </effect>
+               <children>
+                  <JFXButton fx:id="GestionMenuFront" layoutX="-3.0" layoutY="67.0" onAction="#GestionMenuFront" prefHeight="64.0" prefWidth="215.0" stylesheets="@../CSS/BouttonsMenuG.css" text="Menu">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="52.0" fitWidth="61.0" layoutX="8.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ressources/icone_menu.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="GestionPanierfront" layoutX="-3.0" layoutY="265.0" onAction="#GestionPanierFront" prefHeight="77.0" prefWidth="280.0" stylesheets="@../CSS/BouttonsMenuG.css" text="           Panier Commande">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="52.0" fitWidth="65.0" layoutX="14.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ressources/pan.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

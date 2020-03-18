@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="534.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.gui.DivEventController">
+    <children>
+        <Pane layoutX="18.0" layoutY="35.0" prefHeight="338.0" prefWidth="502.0" style="-fx-background-color: #fff;">
+            <children>
+                <Separator layoutX="280.0" layoutY="89.0" prefHeight="8.0" prefWidth="223.0" />
+                <Label fx:id="Complet" layoutX="15.0" layoutY="5.0"  >
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                <Label id="titre" fx:id="titre" alignment="BOTTOM_LEFT" layoutX="35.0" layoutY="27.0" prefHeight="32.0" prefWidth="280.0" text="Quote in progress" textFill="#333333" wrapText="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <Label fx:id="labelprix" layoutX="296.0" layoutY="97.0" text="Prix :">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="prix" layoutX="368.0" layoutY="97.0" text="15 dt" textFill="#ab4d4d">
+                    <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                    </font>
+                </Label>
+                <Pane layoutY="285.0" prefHeight="53.0" prefWidth="502.0" style="-fx-background-color: #F0F0F0;">
+                    <children>
+                        <Label layoutX="61.0" layoutY="26.0" textFill="#333333">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="NbVue" layoutX="470.0" layoutY="18.0" text="Label" />
+                        <FontAwesomeIconView glyphName="EYE" layoutX="450.0" layoutY="30.0" size="14" />
+                        <Label fx:id="NbRating" layoutX="400.0" layoutY="18.0" text="Label" />
+                        <FontAwesomeIconView glyphName="STAR" layoutX="380.0" layoutY="30.0" size="14" />
+                        
+                        <Label fx:id="NbComment" layoutX="330.0" layoutY="18.0" text="Label" />
+                        <FontAwesomeIconView glyphName="COMMENT" layoutX="310.0" layoutY="30.0" size="14" />
+                        <Label fx:id="User" layoutX="30.0" layoutY="18.0" text="" />
+                        <FontAwesomeIconView glyphName="USER" layoutX="10.0" layoutY="30.0" size="14" />
+                    </children>
+                </Pane>
+                <Label layoutX="294.0" layoutY="14.0" text="Date Debut" textFill="#9c5b57">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="dayDeb" layoutX="294.0" layoutY="36.0" text="16" textFill="#aeacac">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Label fx:id="monthDeb" layoutX="343.0" layoutY="44.0" text="APR" textFill="#9c5b57" />
+                <Label fx:id="yearDeb" layoutX="343.0" layoutY="62.0" text="2018" textFill="#aeacac" />
+                <Separator layoutX="388.0" layoutY="21.0" orientation="VERTICAL" prefHeight="64.0" prefWidth="0.0" />
+                <Label layoutX="405.0" layoutY="15.0" text="Date Fin" textFill="#9c5b57">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="dayFin" layoutX="405.0" layoutY="35.0" text="25" textFill="#aeacac">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Label fx:id="monthFin" layoutX="454.0" layoutY="43.0" text="AUG" textFill="#9c5b57" />
+                <Label fx:id="yearFin" layoutX="454.0" layoutY="61.0" text="2018" textFill="#aeacac" />
+                <Rectangle fx:id="image" arcHeight="5.0" arcWidth="5.0" fill="#171717" height="203.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" width="280.0" />
+                <Label fx:id="labelprix1" layoutX="298.0" layoutY="135.0" prefHeight="34.0" prefWidth="63.0" text="Adresse :">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="adr" alignment="TOP_LEFT" layoutX="300.0" layoutY="165.0" prefHeight="117.0" prefWidth="197.0" textFill="#ab4d4d">
+                    <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                    </font>
+                </Label>
+            </children>
+            <effect>
+                <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+            </effect>
+        </Pane>
+    </children>
+</AnchorPane>

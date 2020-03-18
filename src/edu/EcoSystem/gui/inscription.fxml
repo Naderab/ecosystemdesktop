@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="552.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.gui.InscriptionController">
+   <children>
+      <Pane focusTraversable="true" prefHeight="525.0" prefWidth="130.0" style="-fx-background-color: #8BC34A;;">
+         <children>
+            <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="38.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/UPP.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="backlogin" layoutX="21.0" layoutY="1.0" mnemonicParsing="false" onAction="#retourLogin_signal" opacity="0.0" prefHeight="95.0" prefWidth="85.0" text="   ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="525.0" fitWidth="523.0" layoutX="130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/green-energy.jpg" />
+         </image>
+         <effect>
+            <Blend />
+         </effect>
+      </ImageView>
+      <Pane layoutX="130.0" layoutY="120.0" opacity="0.72" prefHeight="345.0" prefWidth="256.0" style="-fx-background-color: #F0F8FF;">
+         <children>
+            <Label fx:id="controle4" layoutX="17.0" layoutY="314.0" opacity="0.72" prefHeight="17.0" prefWidth="4.0" text=" " textFill="RED" />
+            <Label fx:id="controle3" layoutX="20.0" layoutY="231.0" opacity="0.72" text=" " textFill="RED" />
+            <JFXPasswordField fx:id="password2" focusColor="BLACK" labelFloat="true" layoutX="18.0" layoutY="264.0" prefHeight="39.0" prefWidth="207.0" promptText="repéter le mot de passe">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="password1" focusColor="BLACK" labelFloat="true" layoutX="18.0" layoutY="183.0" prefHeight="39.0" prefWidth="207.0" promptText="saisir un mot de passe">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXTextField fx:id="email" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="103.0" prefHeight="39.0" prefWidth="207.0" promptText="saisir votre addresse mail">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="controle1" layoutX="12.0" layoutY="73.0" opacity="0.72" prefHeight="17.0" prefWidth="234.0" text=" " textFill="RED" />
+            <JFXTextField fx:id="username" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="28.0" prefHeight="39.0" prefWidth="207.0" promptText="saisir votre nom" unFocusColor="#0a0a0a">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="controle2" layoutX="16.0" layoutY="156.0" opacity="0.72" text=" " textFill="RED" />
+         </children>
+      </Pane>
+      <Label layoutX="241.0" layoutY="21.0" text="INSCRIPTION" textAlignment="CENTER" textFill="#8bc34a">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajoutAbonne" layoutX="421.0" layoutY="475.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #8BC34A;" text="Confirmer" textFill="WHITE" />
+      <Separator layoutX="163.0" layoutY="74.0" prefHeight="0.0" prefWidth="354.0" />
+   </children>
+   <effect>
+      <DropShadow color="#38ab0a" radius="15.19" width="41.76" />
+   </effect>
+</AnchorPane>

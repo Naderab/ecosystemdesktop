@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.gui.AjoutreclamationController">
+   <children>
+      <Label layoutX="407.0" layoutY="95.0" prefHeight="85.0" prefWidth="534.0" text="Formulaire de reclamation">
+         <font>
+            <Font name="Bodoni MT Condensed" size="69.0" />
+         </font>
+      </Label>
+      <JFXHamburger fx:id="affmenu" layoutX="1209.0" layoutY="127.0" />
+      <JFXDrawer fx:id="menu" defaultDrawerSize="225.0" layoutX="10.0" layoutY="41.0" prefHeight="624.0" prefWidth="200.0" />
+      <AnchorPane layoutX="4.0" layoutY="10.0" prefHeight="86.0" prefWidth="1307.0" style="-fx-background-color: #8BC34A;">
+         <children>
+            <Label layoutX="556.0" layoutY="18.0" prefHeight="35.0" prefWidth="360.0" text="EcoSystem" textFill="#fcfcfc">
+               <font>
+                  <Font name="Comic Sans MS" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="283.0" layoutY="201.0" prefHeight="441.0" prefWidth="780.0" style="-fx-border-color: #8BC34A;">
+         <children>
+            <JFXTextArea fx:id="tftexte" layoutX="32.0" layoutY="166.0" opacity="0.8" prefHeight="175.0" prefWidth="699.0" promptText="Ecrire votre reclamation">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </JFXTextArea>
+            <JFXButton fx:id="envoyer_rec" buttonType="RAISED" layoutX="597.0" layoutY="388.0" onAction="#ajoutRec" prefHeight="33.0" prefWidth="121.0" ripplerFill="#259617" style="-fx-background-color: #259617;" text="Envoyer" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField fx:id="tfuser_rec" layoutX="290.0" layoutY="54.0" prefHeight="25.0" prefWidth="205.0" promptText="Nom de  utilisateur a reclamé" />
+            <JFXComboBox fx:id="boxSujet" layoutX="32.0" layoutY="54.0" prefHeight="25.0" prefWidth="205.0" promptText="Sujet" />
+            <Label fx:id="controle2" layoutX="32.0" layoutY="362.0" prefHeight="17.0" prefWidth="446.0" text="     " textFill="RED" />
+            <Label fx:id="controle1" layoutX="290.0" layoutY="93.0" prefHeight="17.0" prefWidth="175.0" text="     " textFill="RED" />
+            <JFXButton fx:id="retourecs" buttonType="RAISED" layoutX="32.0" layoutY="388.0" onAction="#retourRecs" prefHeight="33.0" prefWidth="121.0" ripplerFill="#259617" style="-fx-background-color: #259617;" text="Retour" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <ImageView fitHeight="124.0" fitWidth="105.0" layoutX="283.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Sheets-icon.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="1162.0" layoutY="108.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="7.0" />
+   </children>
+</AnchorPane>

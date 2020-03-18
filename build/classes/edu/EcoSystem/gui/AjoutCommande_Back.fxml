@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.controller.AjoutCommande_BackController">
+    <children>
+      <AnchorPane prefHeight="600.0" prefWidth="256.0" style="-fx-background-color: #212d32;">
+         <children>
+            <Button fx:id="panier" layoutY="180.0" mnemonicParsing="false" onAction="#panier" prefHeight="54.0" prefWidth="256.0" style="-fx-background-color: #0000;" text="    Gestion Panier" textFill="#f2ebeb">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <Button fx:id="ButtonCommande" layoutY="237.0" mnemonicParsing="false" onAction="#ButtonCommande" prefHeight="54.0" prefWidth="256.0" style="-fx-background-color: #0000;" text="            Gestion Commande" textFill="#f2ebeb">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <ImageView fitHeight="33.0" fitWidth="58.0" layoutX="14.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/panierBack.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="45.0" layoutX="14.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/comBack.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pieChart" onKeyTyped="#rechercher" opacity="0.91" prefHeight="71.0" prefWidth="1000.0" style="-fx-background-color: #3c8dbc;">
+         <children>
+            <Label layoutX="7.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="ECO-SYSTEM BACK " textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="33.0" fitWidth="46.0" layoutX="947.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/llog.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="logback" layoutX="941.0" layoutY="5.0" onAction="#logback" prefHeight="54.0" prefWidth="45.0" text="   " />
+         </children></AnchorPane>
+      <TabPane layoutX="256.0" layoutY="71.0" prefHeight="530.0" prefWidth="744.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: #BBDEFB;" text="Ajout Commande">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="731.0">
+                     <children>
+                        <TextField fx:id="quantite" layoutX="144.0" layoutY="97.0" promptText="quantite" style="-fx-border-color: #009688;" />
+                        <TextField fx:id="prixTotal" layoutX="144.0" layoutY="147.0" promptText="prixTotal" style="-fx-border-color: #009688;" />
+                        <TextField fx:id="id_client1" layoutX="144.0" layoutY="365.0" promptText="id client" style="-fx-border-color: #009688;" />
+                        <DatePicker fx:id="dateCommande" layoutX="143.0" layoutY="311.0" prefHeight="25.0" prefWidth="151.0" promptText="Date" style="-fx-border-color: #009688;" />
+                        <Button fx:id="ajouter" layoutX="549.0" layoutY="427.0" mnemonicParsing="false" onAction="#ajouterCommande" prefHeight="32.0" prefWidth="132.0" style="-fx-background-color: #2771B1;" text="Ajouter" />
+                        <Label layoutX="15.0" layoutY="99.0" prefHeight="20.0" prefWidth="71.0" text="Quantite :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="149.0" prefHeight="20.0" prefWidth="78.0" text="Prix Total :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="17.0" layoutY="313.0" text="Date :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="368.0" text="Id Client:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="prixCommande" layoutX="144.0" layoutY="204.0" promptText="prixCom" style="-fx-border-color: #009688;" />
+                        <Label layoutX="12.0" layoutY="205.0" prefHeight="23.0" prefWidth="115.0" text="Prix Commande :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="etat" layoutX="144.0" layoutY="258.0" promptText="etat" style="-fx-border-color: #009688;" />
+                        <Label layoutX="18.0" layoutY="261.0" prefHeight="17.0" prefWidth="50.0" text="Etat :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="id_panier1" layoutX="142.0" layoutY="420.0" prefHeight="25.0" prefWidth="153.0" promptText="id_panier" style="-fx-border-color: #009688;" />
+                        <Label layoutX="17.0" layoutY="423.0" prefHeight="20.0" prefWidth="67.0" text="Id Panier :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tablee" layoutX="549.0" layoutY="73.0" onMouseClicked="#showOnClickPanier" prefHeight="238.0" prefWidth="153.0" style="-fx-border-color: #009688; ">
+                          <columns>
+                            <TableColumn fx:id="id_panier" prefWidth="75.0" style="-fx-border-color: #3c8dbc;" text="Id Panier" />
+                            <TableColumn fx:id="id_client" prefWidth="75.0" style="-fx-border-color: #3c8dbc;" text="Id Client" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="210.0" layoutY="21.0" prefHeight="41.0" prefWidth="247.0" text="               Ajout Commande " textFill="#3c8dbc">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #2771B1;" text="Affichage Commande">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table2" layoutX="12.0" layoutY="78.0" onMouseClicked="#ShowOnClick" prefHeight="203.0" prefWidth="721.0" style="-fx-border-color: #009688;">
+                          <columns>
+                            <TableColumn fx:id="id2" prefWidth="75.0" text="Id" />
+                            <TableColumn fx:id="quantite2" prefWidth="75.0" text="quantite" />
+                              <TableColumn fx:id="prixTotal2" prefWidth="75.0" text="prix_total" />
+                              <TableColumn fx:id="prixCommande2" prefWidth="102.0" text="prix_commande" />
+                              <TableColumn fx:id="id_client2" prefWidth="86.0" text="id_client" />
+                              <TableColumn fx:id="dateCommande2" prefWidth="102.0" text="dateCommande" />
+                              <TableColumn fx:id="etat2" prefWidth="102.0" text="etat" />
+                              <TableColumn fx:id="idPanier2" prefWidth="102.0" text="id_panier" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="prixTotal_mod" layoutX="145.0" layoutY="358.0" style="-fx-border-color: #009688;" />
+                        <TextField fx:id="prixCom_mod" layoutX="145.0" layoutY="428.0" style="-fx-border-color: #009688;" />
+                        <Button fx:id="modifier" layoutX="642.0" layoutY="307.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #2771B1;" text="Modifier" />
+                        <Button fx:id="supprimer" layoutX="640.0" layoutY="368.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #BBDEFB;" text="Supprimer" />
+                        <TextField fx:id="idcom_mod" disable="true" editable="false" layoutX="145.0" layoutY="294.0" style="-fx-border-color: #009688;" />
+                        <Label layoutX="21.0" layoutY="296.0" prefHeight="20.0" prefWidth="108.0" text="id Commande :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="21.0" layoutY="360.0" prefHeight="20.0" prefWidth="78.0" text="Prix  Total :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="431.0" prefHeight="20.0" prefWidth="118.0" text="Prix Commande : ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="etat_mod" layoutX="442.0" layoutY="294.0" style="-fx-border-color: #009688;" />
+                        <Label layoutX="335.0" layoutY="296.0" prefHeight="20.0" prefWidth="65.0" text="Etat :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="313.0" layoutY="360.0" prefHeight="20.0" prefWidth="109.0" text="Date Commande:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="quantite_mod" layoutX="445.0" layoutY="428.0" style="-fx-border-color: #009688;" />
+                        <Label layoutX="323.0" layoutY="433.0" prefHeight="24.0" prefWidth="99.0" text="Quantite :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="date_mod" layoutX="444.0" layoutY="356.0" prefHeight="25.0" prefWidth="153.0" style="-fx-border-color: #009688;" />
+                        <TextField fx:id="rechercher" layoutX="129.0" layoutY="28.0" onKeyTyped="#recherche" style="-fx-border-color: #009688;" />
+                        <Label layoutX="18.0" layoutY="27.0" prefHeight="22.0" prefWidth="84.0" text="Rechercher : " textFill="#2771b1">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font></Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab style="-fx-background-color: #BBDEFB;" text="Trier Commande">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="731.0">
+                     <children>
+                        <ComboBox fx:id="trier" layoutX="173.0" layoutY="37.0" prefWidth="150.0" style="-fx-border-color: #009688;" />
+                        <TableView fx:id="tableTri" layoutX="20.0" layoutY="103.0" prefHeight="200.0" prefWidth="663.0" style="-fx-border-color: #009688;">
+                          <columns>
+                            <TableColumn fx:id="id3" prefWidth="75.0" text="Id" />
+                            <TableColumn fx:id="quantite3" prefWidth="75.0" text="quantite" />
+                              <TableColumn fx:id="prixTotal3" prefWidth="75.0" text="prix_total" />
+                              <TableColumn fx:id="prixCommande3" prefWidth="110.0" text="prix_Commande" />
+                              <TableColumn fx:id="id_client3" prefWidth="65.0" text="id_client" />
+                              <TableColumn fx:id="dateCommande3" prefWidth="104.0" text="dateCommande" />
+                              <TableColumn fx:id="etat3" prefWidth="68.0" text="etat" />
+                              <TableColumn fx:id="idPanier3" prefWidth="93.0" text="id_panier" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="38.0" layoutY="36.0" prefHeight="27.0" prefWidth="113.0" text="Trier selon :" textFill="#2771b1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="imprimer" layoutX="534.0" layoutY="363.0" mnemonicParsing="false" onAction="#imprimer" prefHeight="41.0" prefWidth="84.0" style="-fx-background-color: #2771B1;" text="Imprimer" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-background-color: #2771B1;" text="Archiver Commande">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="731.0">
+                     <children>
+                        <TableView fx:id="tableArchive" layoutX="14.0" layoutY="80.0" prefHeight="200.0" prefWidth="702.0" style="-fx-border-color: #009688;">
+                          <columns>
+                            <TableColumn fx:id="idarchive" prefWidth="75.0" text="Id" />
+                            <TableColumn fx:id="quantitearchive" prefWidth="75.0" text="quantite" />
+                              <TableColumn fx:id="prixTotalarchive" prefWidth="75.0" text="prix_total" />
+                              <TableColumn fx:id="prixCommandearchive" prefWidth="113.0" text="prix_commande" />
+                              <TableColumn fx:id="id_clientarchive" prefWidth="67.0" text="id_client" />
+                              <TableColumn fx:id="dateCommandearchive" prefWidth="104.0" text="dateCommande" />
+                              <TableColumn fx:id="etatarchive" prefWidth="72.0" text="etat" />
+                              <TableColumn fx:id="id_panierarchive" prefWidth="136.0" text="id_panier" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="archive" layoutX="565.0" layoutY="314.0" mnemonicParsing="false" onAction="#Archiver" prefHeight="41.0" prefWidth="91.0" style="-fx-background-color: #2771B1;" text="Archiver" />
+                        <Label layoutX="26.0" layoutY="21.0" prefHeight="41.0" prefWidth="256.0" text="Archiver Les Commandes Validées :" textFill="#2771b1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="excel" layoutX="459.0" layoutY="314.0" mnemonicParsing="false" onAction="#exportExcel" prefHeight="41.0" prefWidth="87.0" style="-fx-background-color: #BBDEFB;" text="Excel " />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-background-color: #BBDEFB;" text="Statistique Commande">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="731.0">
+                     <children>
+                        <Button fx:id="stat" layoutX="546.0" layoutY="22.0" mnemonicParsing="false" onAction="#stat" style="-fx-background-color: #BBDEFB;" text="Statistique" />
+                        <BarChart fx:id="chart" layoutX="33.0" layoutY="51.0" title="Statistique Du Commande">
+                          <xAxis>
+                            <CategoryAxis label="etat Des Commandes" side="BOTTOM" tickLabelFill="#e47e25" fx:id="x" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="y" label="nombre des Commandes" side="LEFT" tickLabelFill="#eba00b" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+    
+</AnchorPane>

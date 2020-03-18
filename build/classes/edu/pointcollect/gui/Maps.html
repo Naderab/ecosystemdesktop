@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type='text/javascript'>
+
+  var pinInfobox;
+  
+function GetMap() {
+
+var pushpinInfos = [];
+
+ 
+var aa = [];
+
+
+
+var a = [];
+/*let request = new XMLHttpRequest();
+    request.open('GET', 'file:///C:/Users/Khouloud/Documents/NetBeansProjects/Ecosystem/markers.json', true);
+      request.onload = function () {
+      // Convert JSON data to an object
+      var a = JSON.parse(this.response);
+      
+     
+      for (var i = 0; i < a.length; i++) {
+      //  output += '<li>' + users[i].name + ' is ' + users[i].address + ' years old.'; '</li>'
+    
+      pushpinInfos.push({ 'lat': a[i].lat, 'lng': a[i].lng ,'title': a[i].name, 'description': a[i].address});
+
+        
+      }
+   */
+  
+ 
+  
+    //pushpinInfos.push(aa);
+  
+
+
+  var a = [{"idType":14,"address":"Rue d'Ariana, La Marsa, تونس, Tunisie","lng":10.309,"name":"address","id":16,"lat":36.89,"slug":"16"},{"idType":14,"address":"Hachichina, صفاقس, Tunisie","lng":10.1841,"name":"address","id":20,"lat":34.4217,"slug":"-1"},{"idType":14,"address":"Parc de loisirs Aladin, بنزرت الشمالية, Tunisie","lng":9.8778,"name":"address","id":21,"lat":37.2827,"slug":"-6"},{"idType":14,"address":"Av.Paris, Béja, باجة, Tunisie","lng":9.18786,"name":"address","id":24,"lat":36.7235,"slug":"-9"},{"idType":14,"address":"Avenue Charles Nicolle, بن عروس, Tunisie","lng":10.3559,"name":"restaurant","id":30,"lat":36.7228,"slug":"-10"},{"idType":14,"address":"Paintball Tunisie, أريانة المدينة, Tunisie","lng":10.1552,"name":"address","id":31,"lat":36.8822,"slug":"-11"},{"idType":14,"address":"Rue Tahar Ben Fraj, Hammamet, نابل, Tunisie","lng":10.6258,"name":"Formage Tastour","id":32,"lat":36.4014,"slug":"15"},{"idType":14,"address":"Route Nationale 15 Gafsa - Algérie, Gafsa, قفصة, Tunisie","lng":8.78011,"name":"address","id":34,"lat":34.4369,"slug":"66"},{"idType":14,"address":"parc jbil to Dekamis, قبلي, Tunisie","lng":9.16372,"name":"address","id":36,"lat":32.8978,"slug":"222"},{"idType":15,"address":"15 rue montesquieu","lng":10.65555,"name":"boutique store","id":38,"lat":15.2222,"slug":"2"}]
+  
+     for(var i = 0; i < a.length; i++){
+            pushpinInfos.push({ 'lat': a[i].lat, 'lng': a[i].lng ,title:a[i].name, 'description': a[i].address});
+         //  alert(a[i].lng);
+       }
+        
+   //   pushpinInfos[0] = { 'lat': 36.8822, 'lng': 10.1552, 'title': 'Kipper Market', 'description': 'Braka Miladinovi 178, 1200 Tetovë, Tetovo, Macedonia' };
+//     pushpinInfos[0] = { 'lat': 36.89, 'lng': 10.309};
+    
+
+
+    
+    var infoboxLayer = new Microsoft.Maps.EntityCollection();
+    var pinLayer = new Microsoft.Maps.EntityCollection();
+    var apiKey = "AhPoOpkgFp0SR4K3PMN0mmuZNQAlwWpCxOCilZ01eo5GHQeQV3ZMp2NfuSA2GLV1";
+
+    var map = new Microsoft.Maps.Map(document.getElementById("map"), { credentials: apiKey });
+
+    // Create the info box for the pushpin
+    pinInfobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(0, 0), { visible: false });
+    infoboxLayer.push(pinInfobox);
+
+    var locs = [];
+    for (var i = 0 ; i < pushpinInfos.length; i++) {
+        locs[i] = new Microsoft.Maps.Location(pushpinInfos[i].lat, pushpinInfos[i].lng);
+        var pin = new Microsoft.Maps.Pushpin(locs[i]);
+        pin.Title = pushpinInfos[i].title;
+        pin.Description = pushpinInfos[i].description;
+        pinLayer.push(pin); 
+        Microsoft.Maps.Events.addHandler(pin, 'click', displayInfobox);
+    }
+    
+
+    map.entities.push(pinLayer);
+    map.entities.push(infoboxLayer);
+
+    var bestview = Microsoft.Maps.LocationRect.fromLocations(locs);
+    map.setView({ center: bestview.center, zoom: 10 });
+
+//}
+    //request.send();
+}
+
+function displayInfobox(e) {
+    pinInfobox.setOptions({ 
+        title: e.target.Title, description: e.target.Description, visible: true, offset: new Microsoft.Maps.Point(0, 25),
+        
+    
+    });
+    pinInfobox.setLocation(e.target.getLocation());
+}
+
+function hideInfobox(e) {
+    pinInfobox.setOptions({ visible: false });
+}
+    </script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AhPoOpkgFp0SR4K3PMN0mmuZNQAlwWpCxOCilZ01eo5GHQeQV3ZMp2NfuSA2GLV1' async defer></script>
+<script src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0" type="text/javascript" charset="UTF-8"></script>
+</head>
+
+<body onload="GetMap();">
+    <center>
+        <div id="map" style="position: relative; width: 100%; height: 100%;"></div>
+            
+        </center>
+    
+
+        <ul id="users"></ul>
+</body>
+</html>

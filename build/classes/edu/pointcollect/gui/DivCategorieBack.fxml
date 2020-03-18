@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="236.0" prefWidth="153.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pointcollect.services.DivCategorieBackController">
+     <children>
+      <Pane layoutY="-3.0" prefHeight="246.0" prefWidth="153.0" style="-fx-background-color: #fff;">
+         <children>
+            <Pane layoutY="208.0" prefHeight="32.0" prefWidth="153.0" style="-fx-background-color: #F0F0F0;">
+               <children>
+                  <Label layoutX="61.0" layoutY="26.0" textFill="#333333">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="suppCat" layoutX="41.0" layoutY="2.0" mnemonicParsing="false" text="Supprimer" />
+               </children>
+            </Pane>
+            <Rectangle fx:id="image" arcHeight="5.0" arcWidth="5.0" fill="#171717" height="156.0" stroke="BLACK" strokeType="INSIDE" width="153.0" />
+            <Label id="titre" fx:id="titre" alignment="BOTTOM_LEFT" layoutX="13.0" layoutY="167.0" prefHeight="32.0" prefWidth="127.0" text="Quote in progress" textFill="#333333" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

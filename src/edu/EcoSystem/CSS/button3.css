@@ -1,0 +1,20 @@
+
+.button {
+  -fx-background-color: #8BC34A;
+   -fx-border: none;
+   -fx-color: white;
+   -fx-padding: 16px 32px;
+   -fx-text-align: center;
+   -fx-font-size: 16px;
+   -fx-margin: 4px 2px;
+   -fx-opacity: 0.6;
+   -fx-transition: 0.3s;
+   -fx-display: inline-block;
+   -fx-text-decoration: none;
+   -fx-cursor: pointer;
+     -fx-filter:blur(5px);
+    -fx-text-fill: white;
+    -fx-font-size:40px;
+}
+
+.button:hover { -fx-opacity: 1; -fx-background-color: #8BC34A;}

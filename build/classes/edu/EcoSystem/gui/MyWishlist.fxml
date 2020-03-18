@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1448.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.gui.MyWishlistController">
+   <children>
+      <Label layoutX="651.0" layoutY="80.0" prefHeight="97.0" prefWidth="867.0" text="Mes Evénements préférés">
+         <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="recherchetext" focusColor="#8bc34a" layoutX="380.0" layoutY="185.0" onKeyReleased="#RechercheDynamique" prefHeight="24.0" prefWidth="239.0" promptText="Rechercher des Evénéments..." />
+      <AnchorPane fx:id="pane" layoutX="380.0" layoutY="231.0" prefHeight="537.0" prefWidth="1032.0">
+         <children>
+            <TableView fx:id="table" opacity="0.7" prefHeight="531.0" prefWidth="1030.0" stylesheets="@tableView.css">
+               <columns>
+                  <TableColumn fx:id="titre" prefWidth="179.0" text="Titre" />
+                  <TableColumn fx:id="adresse" prefWidth="236.0" text="Adresse" />
+                  <TableColumn fx:id="dateDebut" prefWidth="192.0" text="Date Debut " />
+                  <TableColumn fx:id="dateFin" prefWidth="182.0" text="Date Fin" />
+                  <TableColumn fx:id="Action" prefWidth="112.0" text="Action" />
+                  <TableColumn fx:id="Action2" prefWidth="128.0" />
+               </columns>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <JFXHamburger fx:id="affmenu" layoutX="1378.0" layoutY="118.0" />
+      <JFXDrawer fx:id="menu" defaultDrawerSize="225.0" layoutX="7.0" layoutY="86.0" prefHeight="666.0" prefWidth="200.0" />
+      <AnchorPane layoutX="-6.0" prefHeight="86.0" prefWidth="1454.0" style="-fx-background-color: #8BC34A;">
+         <children>
+            <Label layoutX="556.0" layoutY="18.0" prefHeight="35.0" prefWidth="360.0" text="EcoSystem" textFill="#fcfcfc">
+               <font>
+                  <Font name="Comic Sans MS" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="634.0" layoutY="207.0" size="25" />
+      
+   </children>
+</AnchorPane>

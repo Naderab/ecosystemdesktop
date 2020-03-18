@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.gui.GestionUserController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="256.0" style="-fx-background-color: #212d32;">
+         <children>
+            <Button layoutX="40.0" layoutY="151.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="176.0" style="-fx-background-color: #0000;" text="Gestion Evénements" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="256.0" style="-fx-background-color: #212d32;">
+         <children>
+            <Button layoutX="24.0" layoutY="150.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="208.0" style="-fx-background-color: #0000;" text="Gestion des utilisateurs" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="reclamation_btn" layoutX="18.0" layoutY="204.0" mnemonicParsing="false" onAction="#G_reclamation" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des reclamations" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <JFXButton fx:id="parametreAdmin" layoutX="40.0" layoutY="555.0" onAction="#modifierAdmin" prefHeight="25.0" prefWidth="176.0" text="Paramétres" textFill="WHITE" underline="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Button fx:id="gestionPanier" layoutX="18.0" layoutY="262.0" mnemonicParsing="false" onAction="#gestionPanier" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion de Panier" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestionCommande" layoutX="18.0" layoutY="329.0" mnemonicParsing="false" onAction="#gestionCommande" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des commandes" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestionEvenement" layoutX="18.0" layoutY="370.0" mnemonicParsing="false" onAction="#gestionEvenement" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des Evenements" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestionOffres" layoutX="18.0" layoutY="410.0" mnemonicParsing="false" onAction="#gestionOffre" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des Offres et Devis" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestionpc" layoutX="18.0" layoutY="450.0" mnemonicParsing="false" onAction="#gestionpc" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion Point Collect" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" opacity="0.91" prefHeight="71.0" prefWidth="1000.0" style="-fx-background-color: #3c8dbc;">
+         <children>
+            <Label layoutX="7.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="ECO-SYSTEM  " textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="Gotofront" layoutX="842.0" layoutY="23.0" onAction="#Gotofront" prefHeight="31.0" prefWidth="137.0" text="Go To Front" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TabPane layoutX="266.0" layoutY="134.0" prefHeight="473.0" prefWidth="743.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: #2771B1;" text="     Active        ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="708.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="14.0" layoutY="52.0" prefHeight="341.0" prefWidth="715.0">
+                           <columns>
+                              <TableColumn fx:id="id" prefWidth="73.0" text="Id" />
+                              <TableColumn fx:id="nom" prefWidth="128.0" text="Nom" />
+                              <TableColumn fx:id="email" minWidth="5.0" prefWidth="286.0" text="Email" />
+                              <TableColumn fx:id="role" prefWidth="121.0" text="Role" />
+                              <TableColumn fx:id="etat" prefWidth="106.0" text="Etat" />
+                           </columns>
+                        </TableView>
+                        <FontAwesomeIconView glyphName="REFRESH" layoutX="30.0" layoutY="35.0" onMouseClicked="#Refrechtable" size="25" />
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="480.0" layoutY="35.0" size="25" />
+                        <TextField fx:id="Search" layoutX="509.0" layoutY="14.0" prefHeight="27.0" prefWidth="220.0" style="-fx-border-color: #009688;" />
+                        <Button fx:id="ajoutAdmin" layoutX="627.0" layoutY="405.0" mnemonicParsing="false" onAction="#ajoutAdmin_signal" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #39b1ce;" text="Ajouter" textFill="#f8f8f8" />
+                        <Button fx:id="supprimerUser" layoutX="509.0" layoutY="405.0" mnemonicParsing="false" onAction="#supprimerUser" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #ff0000c0;" text="Supprimer" textFill="WHITE" />
+                       
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #BBDEFB;" text="    Bloqué     ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table1" layoutX="14.0" layoutY="52.0" prefHeight="341.0" prefWidth="715.0">
+                           <columns>
+                              <TableColumn fx:id="id1" prefWidth="73.0" text="Id" />
+                              <TableColumn fx:id="nom1" prefWidth="128.0" text="Nom" />
+                              <TableColumn fx:id="email1" minWidth="5.0" prefWidth="286.0" text="Email" />
+                              <TableColumn fx:id="role1" prefWidth="121.0" text="Role" />
+                              <TableColumn fx:id="etat1" prefWidth="106.0" text="Etat" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="Search1" layoutX="509.0" layoutY="14.0" prefHeight="27.0" prefWidth="220.0" style="-fx-border-color: #009688;" />
+                        <Button fx:id="ajoutAdmin1" layoutX="627.0" layoutY="405.0" mnemonicParsing="false" onAction="#ajoutAdmin_signal" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #39b1ce;" text="Ajouter" textFill="#fffbfb" />
+                        <Button fx:id="supprimerUser1" layoutX="509.0" layoutY="405.0" mnemonicParsing="false" onAction="#supprimerUser" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #ff0000c0;" text="Supprimer" textFill="WHITE" />
+                        <FontAwesomeIconView glyphName="REFRESH" layoutX="30.0" layoutY="35.0" onMouseClicked="#Refrechtable1" size="25" />
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="480.0" layoutY="35.0" size="25" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="285.0" layoutY="92.0" text="Liste des utilisateurs" textFill="#307dcf">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

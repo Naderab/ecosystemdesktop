@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.GestionProduit.GUI.DetailProduitController">
+   <children>
+      <AnchorPane prefHeight="1000.0" prefWidth="290.0" style="-fx-background-color: #a3d17b;">
+         <children>
+            <Button fx:id="btnaccueil" layoutY="154.0" mnemonicParsing="false" onAction="#accueilfromdetail" prefHeight="52.0" prefWidth="290.0" style="-fx-background-color: #3e5e21;" text="Accueil" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <Label alignment="CENTER" layoutX="692.0" layoutY="39.0" prefHeight="50.0" prefWidth="305.0" text="Détail d'une annonce" textFill="#308340">
+         <font>
+            <Font name="Bernard MT Condensed" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="24.0" text="ECO" textFill="WHITE">
+         <font>
+            <Font name="Bernard MT Condensed" size="64.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="97.0" prefHeight="17.0" prefWidth="105.0" text="System" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="testadmin1" layoutX="-1.0" layoutY="216.0" mnemonicParsing="false" onAction="#testadmin1" prefHeight="52.0" prefWidth="290.0" style="-fx-background-color: #3e5e21;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="tfsuppriannon2" layoutX="876.0" layoutY="618.0" mnemonicParsing="false" onAction="#cliquesupprim2" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #a3d17b;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="detaildescription" layoutX="349.0" layoutY="500.0" prefHeight="113.0" prefWidth="1007.0" text="Label">
+         <font>
+            <Font name="Arial Black" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="detailprix" layoutX="349.0" layoutY="489.0" prefHeight="22.0" prefWidth="121.0" text="Label">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="detailtitre" layoutX="349.0" layoutY="427.0" prefHeight="62.0" prefWidth="973.0" text="Label">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="tfimagedetail" fitHeight="328.0" fitWidth="537.0" layoutX="636.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="tfmodifier2" layoutX="620.0" layoutY="618.0" mnemonicParsing="false" onAction="#cliquemodifier2" prefHeight="34.0" prefWidth="227.0" style="-fx-background-color: #a3d17b;" text="Modifier" textFill="#fffbfb">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

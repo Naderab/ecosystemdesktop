@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.gui.DivReviewController">
+    <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="252.0" prefWidth="558.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #c3c3c3;">
+         <children>
+            <Label fx:id="rname" layoutX="121.0" layoutY="22.0" prefHeight="30.0" prefWidth="246.0" style="-fx-text-fill: #73879C;" text="your name">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1.0" layoutY="200.0" prefHeight="50.0" prefWidth="555.0" style="-fx-border-radius: 0 0 14 14; -fx-background-radius: 0 0 14 14; -fx-background-color: #E5E8EB; -fx-border-color: #C3C3C3; -fx-border-width: 1 0 0 0;">
+               <children>
+                  <Pane fx:id="sq" layoutX="14.0" layoutY="7.0" prefHeight="39.0" prefWidth="537.0" style="-fx-border-radius: 0 3 3 3; -fx-border-width: 1 0 0 0;">
+                     <children>
+                        <JFXButton fx:id="rjaime" layoutX="365.0" layoutY="4.0" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: bcbcbc; -fx-text-fill: white; -fx-font-size: 14;" text="J'aime">
+                           <graphic>
+                              <FontAwesomeIconView fill="#fffdfd" glyphName="THUMBS_UP" size="14" wrappingWidth="18.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="rliekd" layoutX="365.0" layoutY="4.0" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #337AB7; -fx-text-fill: white; -fx-font-size: 14;" text="Liked" visible="false">
+                           <graphic>
+                              <FontAwesomeIconView fill="#fffdfd" glyphName="CHECK" size="14" wrappingWidth="18.0" />
+                           </graphic>
+                        </JFXButton>
+                        <Label fx:id="nbrlikes" layoutX="495.0" layoutY="11.0" text="25" textFill="#7c7490">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#7575ff" glyphName="THUMBS_UP" layoutX="515.0" layoutY="24.0" size="16" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Circle fx:id="rcircle" fill="#e5e8eb" layoutX="64.0" layoutY="48.0" radius="46.0" stroke="#c3c3c3" strokeType="INSIDE" />
+            <Label fx:id="rcom" layoutX="19.0" layoutY="122.0" prefHeight="76.0" prefWidth="517.0" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" wrapText="true" />
+            <Label fx:id="id" layoutX="343.0" layoutY="28.0" visible="false" />
+            <FontAwesomeIconView fx:id="trash" fill="RED" glyphName="TRASH" layoutX="525.0" layoutY="38.0" size="30" />
+            <Label fx:id="daterev" layoutX="424.0" layoutY="100.0" text="Label" textFill="#73839c" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

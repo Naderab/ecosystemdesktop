@@ -1,0 +1,57 @@
+[
+   {"markers":   {
+        "address":"Rue d'Ariana, La Marsa, تونس, Tunisie","lng":10.309,"lat":36.89
+        }},
+        {"markers":     {
+        "address":"Hachichina, صفاقس, Tunisie","lng":10.1841,"lat":34.4217
+        }},
+        {"markers":   {
+            "address":"Parc de loisirs Aladin, بنزرت الشمالية, Tunisie","lng":9.8778,"lat":37.2827
+        }},
+        {"markers":  {
+              "address":"Av.Paris, Béja, باجة, Tunisie","lng":9.18786,"lat":36.7235
+        }},
+        {"markers":  {
+          "address":"Avenue Charles Nicolle, بن عروس, Tunisie","lng":10.3559,"lat":36.7228
+        }},
+        {"markers": {
+           "address":"Paintball Tunisie, أريانة المدينة, Tunisie","lng":10.1552,"lat":36.8822
+        }},
+        {"markers":  {
+           "address":"Rue Tahar Ben Fraj, Hammamet, نابل, Tunisie","lng":10.6258,"lat":36.4014
+        }},
+        {"markers":  {
+           "address":"Route Nationale 15 Gafsa - Algérie, Gafsa, قفصة, Tunisie","lng":8.78011,"lat":34.4369
+        }},
+        {"markers": {
+           "address":"parc jbil to Dekamis, قبلي, Tunisie","lng":9.16372,"lat":32.8978
+        }},
+        {"markers": {
+           "address":"حلق الوادي‎ - Ḥalq al-Wādī, Italian: La Goletta","lng":10.302998788,"lat":36.81749673
+        }},
+        {"markers":{
+           "address":"Menzah 9 Carrefour Market Tunisia","lng":10.1521406,"lat":36.8457799
+        }},
+        {"markers": {
+            "address":"Carrefour Market Centre Urbain Nord","lng":10.190033,"lat":36.8496059
+        }},
+        {"markers": {
+           "address":"Carrefour market- Sousse jawhara","lng":10.6223936,"lat":35.8313606
+        }},
+        {"markers": {
+          "address":"Carrefour Market, Avenue de l'Environnement, Manouba","lng":10.1000471,"lat":36.8070943
+        }},
+        {"markers":{
+           "address":"Carrefour Tunis, SIDI DAOUD - TUNIS","lng":10.295659,"lat":36.8667981
+        }},
+        {"markers":{
+          "address":"Carrefour Market, El Mourouj, Bin Arus","lng":10.2072604,"lat":36.734282
+        }},
+        {"markers":{
+            "address":"Carrefour Market elghazela كارفور ماركت الغزالة، Cité La Gazelle","lng":10.1780032,"lat":36.8791902
+        }},
+        {"markers": {
+           "address":"15 rue montesquieu","lng":9.8540332,"lat":37.2812095
+        }
+      }
+]

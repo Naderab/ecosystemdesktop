@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1448.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.controller.AjouterDevisController">
+    <children>
+        <ScrollPane fx:id="pane" layoutX="370.0" layoutY="86.0" prefHeight="682.0" prefWidth="1078.0">
+            <content>
+                <AnchorPane id="AnchorPane" prefHeight="671.0" prefWidth="1067.0">
+                    <children>
+                        <Label layoutX="483.0" layoutY="15.0" text="DEVIS">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="95.0" text="Libelle">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="142.0" text="Date du devis">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="187.0" text="Date du validite">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="455.0" layoutY="65.0" text="Message">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="libelle" layoutX="179.0" layoutY="92.0" prefHeight="24.0" prefWidth="215.0" promptText="libelle" />
+                        <TextArea fx:id="mesage" layoutX="455.0" layoutY="98.0" prefHeight="110.0" prefWidth="581.0" promptText="message...." />
+                        <DatePicker fx:id="dated" layoutX="179.0" layoutY="140.0" prefHeight="25.0" prefWidth="215.0" promptText="date du devis" />
+                        <DatePicker fx:id="datevd" layoutX="179.0" layoutY="185.0" prefHeight="11.0" prefWidth="214.0" promptText="date de validite" />
+                        <TextArea fx:id="description" layoutX="24.0" layoutY="269.0" prefHeight="30.0" prefWidth="537.0" promptText="Description.." />
+                        <Label layoutX="24.0" layoutY="248.0" text="Description">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="627.0" layoutY="248.0" text="QTE">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="692.0" layoutY="248.0" text="Prix Unitaire">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="808.0" layoutY="249.0" text="Taux de TVA">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="932.0" layoutY="248.0" prefHeight="19.0" prefWidth="57.0" text="Montant">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="qte" layoutX="618.0" layoutY="275.0" prefHeight="26.0" prefWidth="46.0" promptText="0.0" />
+                        <TextField fx:id="prixuni" layoutX="695.0" layoutY="275.0" prefHeight="25.0" prefWidth="82.0" promptText="0.00 DT" />
+                        <TextField fx:id="montant" disable="true" layoutX="924.0" layoutY="275.0" prefHeight="26.0" prefWidth="84.0" promptText="0.00 DT" />
+                        <Label layoutX="641.0" layoutY="433.0" text="Total(HT)" textFill="#6f6c6c">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="totalht" layoutX="909.0" layoutY="433.0" text="0.00 DT" textFill="#6f6c6c">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="641.0" layoutY="493.0" text="Total (TTC)">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="totalttc" layoutX="912.0" layoutY="493.0" text="0.00 DT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="btn_ajouter" layoutX="840.0" layoutY="617.0" mnemonicParsing="false" onAction="#Ajouterdevis" style="-fx-background-color: #20fc23;" text="Enregistrer" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btn_reset" layoutX="955.0" layoutY="617.0" mnemonicParsing="false" onAction="#Reset" style="-fx-background-color: #ff0000;" text="Annuler" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Separator layoutY="221.0" prefHeight="2.0" prefWidth="1066.0" />
+                        <Separator layoutX="612.0" layoutY="423.0" prefHeight="0.0" prefWidth="392.0" />
+                        <Separator layoutX="613.0" layoutY="474.0" prefHeight="0.0" prefWidth="391.0" />
+                        <ComboBox fx:id="tva" layoutX="810.0" layoutY="275.0" prefHeight="26.0" prefWidth="74.0" />
+                        <Label fx:id="labellibelle" layoutX="146.0" layoutY="118.0" prefHeight="18.0" prefWidth="7.0" textFill="#e80000" />
+                        <Label fx:id="labeldated" layoutX="94.0" layoutY="165.0" prefHeight="18.0" prefWidth="0.0" textFill="#f00303" />
+                        <Label fx:id="labeldatev" layoutX="82.0" layoutY="214.0" textFill="#f80303" />
+                        <Label fx:id="labelmessage" layoutX="533.0" layoutY="66.0" prefHeight="18.0" prefWidth="19.0" textFill="#f00606" />
+                        <Label fx:id="labeldesc" layoutX="37.0" layoutY="314.0" prefHeight="18.0" prefWidth="14.0" textFill="#fa0505" />
+                        <Button fx:id="btn_back" layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #4dc8ea;" text="Back" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="calculer" layoutX="936.0" layoutY="323.0" mnemonicParsing="false" onAction="#calculer" style="-fx-background-color: #4dc8ea;" text="Calculer" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <TextField fx:id="idoffre" layoutX="137.0" layoutY="22.0" opacity="0.0" />
+                    <JFXHamburger fx:id="affmenu" layoutX="978.0" layoutY="25.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+        <JFXDrawer fx:id="menu" defaultDrawerSize="225.0" layoutY="85.0" prefHeight="682.0" prefWidth="210.0" />
+        <AnchorPane layoutX="-6.0" prefHeight="86.0" prefWidth="1454.0" style="-fx-background-color: #8BC34A;">
+            <children>
+             
+    
+                <Label layoutX="556.0" layoutY="18.0" prefHeight="35.0" prefWidth="360.0" text="EcoSystem" textFill="#fcfcfc">
+                    <font>
+                        <Font name="Comic Sans MS" size="36.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+   
+</AnchorPane>

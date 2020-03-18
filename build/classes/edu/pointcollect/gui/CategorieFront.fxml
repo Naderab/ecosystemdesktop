@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pointcollect.services.CategorieFrontController">
+    <children>
+        <Group layoutX="731.0" layoutY="371.0" />
+<FlowPane fx:id="flowPane" layoutX="140.0" layoutY="55.0" prefHeight="278.0" prefWidth="366.0">
+         <children>
+          
+         </children>
+      </FlowPane>
+    </children>
+</AnchorPane>

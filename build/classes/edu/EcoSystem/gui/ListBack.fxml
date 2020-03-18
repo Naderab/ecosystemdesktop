@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import com.jfoenix.controls.JFXButton?>
+
+
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1448.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.controller.ListBackController">
+    <children>
+        <AnchorPane id="AnchorPane" layoutX="-1.0" prefHeight="768.0" prefWidth="1448.0">
+            <children>
+                <AnchorPane prefHeight="758.0" prefWidth="256.0" style="-fx-background-color: #212d32;">
+                    <children>
+                        <Button layoutX="24.0" layoutY="150.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="208.0" style="-fx-background-color: #0000;" text="Gestion des utilisateurs" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="reclamation_btn" layoutX="18.0" layoutY="204.0" mnemonicParsing="false" onAction="#G_reclamation" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des reclamations" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <JFXButton fx:id="parametreAdmin" layoutX="40.0" layoutY="555.0" onAction="#modifierAdmin" prefHeight="25.0" prefWidth="176.0" text="Paramétres" textFill="WHITE" underline="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               
+            </JFXButton>
+            <Button fx:id="gestionPanier" layoutX="18.0" layoutY="262.0" mnemonicParsing="false" onAction="#gestionPanier" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion de Panier" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestionCommande" layoutX="18.0" layoutY="329.0" mnemonicParsing="false" onAction="#gestionCommande" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des commandes" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestionEvenement" layoutX="18.0" layoutY="370.0" mnemonicParsing="false" onAction="#gestionEvenement" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des Evenements" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="gestionOffres" layoutX="18.0" layoutY="410.0" mnemonicParsing="false" onAction="#gestionOffre" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des Offres et Devis" textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane opacity="0.91" prefHeight="71.0" prefWidth="1448.0" style="-fx-background-color: #3c8dbc;">
+                    <children>
+                        <Label layoutX="7.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="ECO-SYSTEM " textFill="#f2ebeb">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <TabPane layoutX="256.0" layoutY="71.0" prefHeight="687.0" prefWidth="1192.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab style="-fx-background-color: #307dcf;" text="Les Offres">
+                            <content>
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="offreTable" layoutX="29.0" layoutY="103.0" prefHeight="474.0" prefWidth="1140.0" style="-fx-border-color: #009688;">
+                                            <columns>
+                                                <TableColumn fx:id="tab_titre" prefWidth="152.80001831054688" text="Titre" />
+                                                <TableColumn fx:id="tab_type" prefWidth="118.39996337890625" text="Type" />
+                                                <TableColumn fx:id="tab_desc" prefWidth="385.5999755859375" text="Description" />
+                                                <TableColumn fx:id="tab_dateo" prefWidth="204.0" text="Date du offre" />
+                                                <TableColumn fx:id="tab_datev" prefWidth="292.800048828125" text="Date du validite" />
+                                            </columns>
+                                        </TableView>
+                                        <TextField fx:id="rechercherOffre" layoutX="1046.0" layoutY="53.0" prefHeight="27.0" prefWidth="119.0" style="-fx-border-color: #009688;" />
+                                        <Label layoutX="935.0" layoutY="57.0" prefHeight="20.0" prefWidth="91.0" text="Rechercher :" textFill="#307dcf">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        
+                                        <Label layoutX="29.0" layoutY="29.0" text="Liste des offres" textFill="#307dcf">
+                                            <font>
+                                                <Font name="System Bold Italic" size="23.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="demandeDevis" layoutX="1008.0" layoutY="596.0" mnemonicParsing="false" onAction="#demanderDevis" style="-fx-background-color: #20fc23;" text="Demander un devis" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="ActualiserOffre" layoutX="29.0" layoutY="65.0" mnemonicParsing="false" onAction="#ActualiserOffre" style="-fx-background-color: #4dc8ea;" text="Actualiser" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab style="-fx-background-color: #307dcf;" text="Vos Demande Devis">
+                            <content>
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="demandedevisTable" layoutX="29.0" layoutY="103.0" prefHeight="484.0" prefWidth="1150.0" style="-fx-border-color: #009688;">
+                                            <columns>
+                                                <TableColumn fx:id="tab_titred" prefWidth="108.79998779296875" text="Titre" />
+                                                <TableColumn fx:id="tab_typed" prefWidth="132.80001831054688" text="Type" />
+                                                <TableColumn fx:id="tab_descd" prefWidth="490.39996337890625" text="Description" />
+                                                <TableColumn fx:id="tab_dateod" prefWidth="219.2000732421875" text="Date du offre" />
+                                                <TableColumn fx:id="tab_datevd" prefWidth="201.5999755859375" text="Date du validite" />
+                                            </columns>
+                                        </TableView>
+                                        <TextField fx:id="rechercherdemande" layoutX="1048.0" layoutY="64.0" prefHeight="27.0" prefWidth="119.0" style="-fx-border-color: #009688;" />
+                                        <Label layoutX="942.0" layoutY="68.0" prefHeight="20.0" prefWidth="91.0" text="Rechercher :" textFill="#307dcf">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        
+                                        <Label layoutX="29.0" layoutY="29.0" text="Liste des demandes devis" textFill="#307dcf">
+                                            <font>
+                                                <Font name="System Bold Italic" size="23.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="annulerdemandeDevis" layoutX="1030.0" layoutY="612.0" mnemonicParsing="false" onAction="#AnnulerDemande" style="-fx-background-color: #ff0000;" text="Annuler Demande" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="Actualiserdemande" layoutX="29.0" layoutY="65.0" mnemonicParsing="false" onAction="#ActualiserDemande" style="-fx-background-color: #4dc8ea;" text="Actualiser" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab style="-fx-background-color: #307dcf;" text="Les Devis">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="devisTable" layoutX="29.0" layoutY="103.0" prefHeight="492.0" prefWidth="1158.0" style="-fx-border-color: #307dcf;">
+                                            <columns>
+                                                <TableColumn fx:id="tab_libelle" prefWidth="92.80001831054688" text="Libelle" />
+                                                <TableColumn fx:id="tab_descdevis" prefWidth="519.2000122070312" text="Description" />
+                                                <TableColumn fx:id="tab_datedevis" prefWidth="174.40008544921875" text="Date du devis" />
+                                                <TableColumn fx:id="tab_datevdevis" prefWidth="201.599853515625" text="Date du validite" />
+                                                <TableColumn fx:id="tab_TTC" prefWidth="172.800048828125" text="Total TTC" />
+                                            </columns>
+                                        </TableView>
+                                        <TextField fx:id="rechercherDevis" layoutX="1058.0" layoutY="63.0" prefHeight="27.0" prefWidth="119.0" style="-fx-border-color: #307dcf;" />
+                                        <Label layoutX="949.0" layoutY="67.0" prefHeight="20.0" prefWidth="91.0" text="Rechercher :" textFill="#307dcf">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        
+                                        <Label layoutX="29.0" layoutY="29.0" text="Liste des devis" textFill="#307dcf">
+                                            <font>
+                                                <Font name="System Bold Italic" size="23.0" />
+                                            </font>
+                                        </Label>
+                                        <Button layoutX="69.0" layoutY="609.0" mnemonicParsing="false" style="-fx-background-color: #4dc8ea;" text="Aperçu PDF" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Button>
+                                        <Button layoutX="191.0" layoutY="609.0" mnemonicParsing="false" style="-fx-background-color: #4dc8ea;" text="Conversion devise" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

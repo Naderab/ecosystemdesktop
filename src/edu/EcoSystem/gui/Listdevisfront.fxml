@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1448.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.controller.ListdevisfrontController">
+   <children>
+  <ScrollPane fx:id="pane" layoutX="380.0" layoutY="86.0" prefHeight="679.0" prefWidth="1068.0">
+         <content>
+            <AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="1041.0">
+               <children>
+                  <TabPane prefHeight="679.0" prefWidth="1068.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab style="-fx-background-color: #8BC34A;" text="Vos Demande Devis">
+                           <content>
+                              <AnchorPane prefHeight="613.0" prefWidth="1041.0">
+                                 <children>
+                                    <TableView fx:id="offreTable" layoutX="29.0" layoutY="103.0" prefHeight="480.0" prefWidth="1002.0" style="-fx-border-color: #8BC34A;">
+                                       <columns>
+                                          <TableColumn fx:id="tab_titre" minWidth="15.0" prefWidth="113.5999755859375" text="Titre" />
+                                          <TableColumn fx:id="tab_type" prefWidth="121.60003662109375" text="Type" />
+                                          <TableColumn fx:id="tab_desc" prefWidth="399.20001220703125" text="Description" />
+                                          <TableColumn fx:id="tab_dateo" prefWidth="159.99993896484375" text="Date du offre" />
+                                          <TableColumn fx:id="tab_datev" prefWidth="220.0" text="Date du validite" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="rechercherOffre" layoutX="889.0" layoutY="59.0" prefHeight="34.0" prefWidth="139.0" style="-fx-border-color: #8BC34A;">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="747.0" layoutY="63.0" prefHeight="26.0" prefWidth="141.0" text="Rechercher :" textFill="#8bc34a">
+                                       <font>
+                                          <Font name="Arial Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="29.0" layoutY="29.0" text="Liste des demandes devis" textFill="#8bc34a">
+                                       <font>
+                                          <Font name="System Bold Italic" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btn_generer" layoutX="831.0" layoutY="590.0" mnemonicParsing="false" onAction="#genererdevis" prefHeight="34.0" prefWidth="163.0" style="-fx-background-color: #20fc23;" text="Génerer un devis" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <JFXHamburger fx:id="affmenu" layoutX="961.0" layoutY="21.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab style="-fx-background-color: #8BC34A;" text="Les devis">
+                           <content>
+                              <AnchorPane prefHeight="655.0" prefWidth="1052.0">
+                                 <children>
+                                    <TableView fx:id="devisTable" layoutX="29.0" layoutY="103.0" prefHeight="450.0" prefWidth="1011.0" style="-fx-border-color: #8BC34A;">
+                                       <columns>
+                                          <TableColumn fx:id="tab_libelle" prefWidth="124.0" text="Libelle" />
+                                          <TableColumn fx:id="tab_descd" prefWidth="402.3999938964844" text="Description" />
+                                          <TableColumn fx:id="tab_dated" prefWidth="179.20001220703125" text="Date du devis" />
+                                          <TableColumn fx:id="tab_datevd" prefWidth="175.99993896484375" text="Date du validite" />
+                                          <TableColumn fx:id="tab_TTC" prefWidth="140.800048828125" text="Total TTC" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="rechercherDevis" layoutX="909.0" layoutY="64.0" prefHeight="27.0" prefWidth="119.0" style="-fx-border-color: #8BC34A;" />
+                                    <Label layoutX="800.0" layoutY="68.0" prefHeight="20.0" prefWidth="91.0" text="Rechercher :" textFill="#8bc34a">
+                                       <font>
+                                          <Font name="Arial Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="29.0" layoutY="14.0" prefHeight="50.0" prefWidth="278.0" text="Liste des devis" textFill="#8bc34a">
+                                       <font>
+                                          <Font name="System Bold Italic" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btn_modifier" layoutX="836.0" layoutY="573.0" mnemonicParsing="false" onAction="#ModifierDevis" style="-fx-background-color: #20fc23;" text="Modifier" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btn_supprimer" layoutX="938.0" layoutY="573.0" mnemonicParsing="false" onAction="#supprimerdevis" style="-fx-background-color: #ff0000;" text="Supprimer" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btn_actualiser" layoutX="29.0" layoutY="65.0" mnemonicParsing="false" onAction="#ActualiserDevis" style="-fx-background-color: #4dc8ea;" text="Actualiser" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font></Button>
+                                    <Button fx:id="pdf" layoutX="29.0" layoutY="573.0" mnemonicParsing="false" onAction="#generatepdf" style="-fx-background-color: #4dc8ea;" text="Aperçu PDF" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+        <JFXDrawer fx:id="menu" defaultDrawerSize="225.0" layoutX="-1.0" layoutY="86.0" prefHeight="686.0" prefWidth="208.0" />
+      <AnchorPane layoutX="-6.0" prefHeight="86.0" prefWidth="1454.0" style="-fx-background-color: #8BC34A;">
+         <children>
+              
+    
+            <Label layoutX="556.0" layoutY="18.0" prefHeight="35.0" prefWidth="360.0" text="EcoSystem" textFill="#fcfcfc">
+               <font>
+                  <Font name="Comic Sans MS" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

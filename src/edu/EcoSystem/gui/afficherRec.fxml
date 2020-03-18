@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.EcoSystem.gui.AfficherRecController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="600.0" prefWidth="256.0" style="-fx-background-color: #212d32;" />
+      <AnchorPane layoutX="14.0" layoutY="14.0" opacity="0.91" prefHeight="71.0" prefWidth="1000.0" style="-fx-background-color: #3c8dbc;">
+         <children>
+            <Label layoutX="7.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="      ECO-SYSTEM  " textFill="#f2ebeb">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="gestionuser_btn" layoutX="34.0" layoutY="160.0" mnemonicParsing="false" onAction="#G_utilisateur" prefHeight="38.0" prefWidth="208.0" style="-fx-background-color: #0000;" text="Gestion des utilisateurs" textFill="#f2ebeb">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="34.0" layoutY="215.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #0000;" text="Gestion des reclamations" textFill="#f2ebeb">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TabPane layoutX="270.0" layoutY="134.0" prefHeight="479.0" prefWidth="742.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: #2771B1;" text="Réclamations Traitées">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="671.0">
+                     <children>
+                        <TableView fx:id="table_rec" layoutX="9.0" layoutY="38.0" prefHeight="364.0" prefWidth="724.0">
+                           <columns>
+                              <TableColumn fx:id="id_rec" prefWidth="51.0" text="Id" />
+                              <TableColumn fx:id="theme_rec" prefWidth="105.0" text="Theme" />
+                              <TableColumn fx:id="contenu_rec" prefWidth="205.0" text="Contenu" />
+                              <TableColumn fx:id="date_rec" prefWidth="117.0" text="Date" />
+                              <TableColumn fx:id="auteur_rec" prefWidth="135.0" text="Auteur" />
+                              <TableColumn fx:id="reclamé_rec" prefWidth="110.0" text="U_reclamé" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="suppRec_btn" layoutX="615.0" layoutY="408.0" mnemonicParsing="false" onAction="#supprimerRec" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #ff0000c0;" text="Supprimer" textFill="#f8f7f7" />
+                        <FontAwesomeIconView glyphName="REFRESH" layoutX="50.0" layoutY="25.0" onMouseClicked="#Refrechtable" size="25" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #BBDEFB;" text="Réclamations non Traitées">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table_rec1" layoutX="9.0" layoutY="38.0" prefHeight="364.0" prefWidth="724.0">
+                           <columns>
+                              <TableColumn fx:id="id_rec1" prefWidth="51.0" text="Id" />
+                              <TableColumn fx:id="theme_rec1" prefWidth="105.0" text="Theme" />
+                              <TableColumn fx:id="contenu_rec1" prefWidth="149.0" text="Contenu" />
+                              <TableColumn fx:id="date_rec1" prefWidth="119.0" text="Date" />
+                              <TableColumn fx:id="auteur_rec1" prefWidth="101.0" text="Auteur" />
+                              <TableColumn fx:id="reclamé_rec1" prefWidth="99.0" text="U_reclamé" />
+                              <TableColumn fx:id="etat_rec1" prefWidth="98.0" text="ACTION" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="suppRec_btn1" layoutX="615.0" layoutY="408.0" mnemonicParsing="false" onAction="#supprimerRec" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #ff0000c0;" text="Supprimer" textFill="#ffffffbf" />
+                        <FontAwesomeIconView glyphName="REFRESH" layoutX="50.0" layoutY="25.0" onMouseClicked="#Refrechtable" size="25" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="293.0" layoutY="100.0" text="Liste des reclamations" textFill="#307dcf">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
